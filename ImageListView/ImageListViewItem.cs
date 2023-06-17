@@ -21,6 +21,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Manina.Windows.Forms
 {
@@ -40,6 +41,9 @@ namespace Manina.Windows.Forms
         internal bool mEnabled;
         private string mText;
         private int mZOrder;
+        private Image mOverlayImage;
+        private string mAltText;
+
         // File info
         internal string extension;
         private DateTime mDateAccessed;
@@ -160,6 +164,18 @@ namespace Manina.Windows.Forms
         /// </summary>
         [Category("Behavior"), Browsable(false), Description("Gets the index of the item."), EditorBrowsable(EditorBrowsableState.Advanced)]
         public int Index { get { return mIndex; } }
+
+       
+        /// <summary>
+        /// Gets or Sets the Overlay Image
+        /// </summary>
+        [Category("Appearance"), Browsable(true), Description("Gets or sets the Overlay Image."), DefaultValue(null)]
+        public Image OvelayImage
+        {
+            get { return mOverlayImage; }
+            set { mOverlayImage = value; }
+        }
+
         /// <summary>
         /// Gets or sets a value determining if the item is checked.
         /// </summary>
@@ -204,6 +220,8 @@ namespace Manina.Windows.Forms
                 }
             }
         }
+
+
         /// <summary>
         /// Gets or sets the user-defined data associated with the item.
         /// </summary>

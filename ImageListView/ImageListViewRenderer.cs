@@ -1470,7 +1470,7 @@ namespace Manina.Windows.Forms
                     // Draw image
                     g.DrawImage(image, pos);
                     // Draw image border
-                    if (Math.Min(pos.Width, pos.Height) > 32)
+                    if (ImageListView.ShowImageBorders && (Math.Min(pos.Width, pos.Height) > 32))
                     {
                         using (Pen pGray128 = new Pen(ImageListView.Colors.ImageOuterBorderColor))
                         {
@@ -1566,7 +1566,7 @@ namespace Manina.Windows.Forms
                     // Draw image
                     g.DrawImage(image, pos);
                     // Draw image border
-                    if (Math.Min(pos.Width, pos.Height) > 32)
+                    if (ImageListView.ShowImageBorders && (Math.Min(pos.Width, pos.Height) > 32))
                     {
                         using (Pen pOuterBorder = new Pen(ImageListView.Colors.ImageOuterBorderColor))
                         using (Pen pInnerBorder = new Pen(ImageListView.Colors.ImageInnerBorderColor))

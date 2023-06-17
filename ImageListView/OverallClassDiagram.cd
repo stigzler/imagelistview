@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Manina.Windows.Forms.ImageListView">
-    <Position X="3.25" Y="0.5" Width="2.25" />
+  <Class Name="Manina.Windows.Forms.ImageListView" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
@@ -85,8 +85,20 @@
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>d9bjrlRqhK7Lj63BTmm2Z/t/QndVQRBMcf/SyUlr9yY=</HashCode>
+      <HashCode>d9bjr1RqhK7Lj63BTmm2Z/t/QndVQRBMcf/SyUlr92Y=</HashCode>
       <FileName>HitInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Manina.Windows.Forms.ImageListViewItem" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>YAQBApEFDKEghIfkEAAQIK42gIgwzAchllPMiNhAAFI=</HashCode>
+      <FileName>ImageListViewItem.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
