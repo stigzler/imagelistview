@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Ideas.md" />
+    <None Include="$(MSBuildThisFileDirectory)Immediate.md" />
     <None Include="$(MSBuildThisFileDirectory)ReadMe.md" />
   </ItemGroup>
 </Project>
