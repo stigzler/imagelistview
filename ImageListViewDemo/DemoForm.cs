@@ -127,7 +127,7 @@ namespace Manina.Windows.Forms
 
             Text = string.Format("ImageListView Demo ({0})", imageListView1.ThumbnailExtractor.Name);
 
-            TreeNode node = new TreeNode("Loading...", 3, 3);
+            TreeNode node = new TreeNode("C:\\temp",3,3);
             node.Tag = null;
             treeView1.Nodes.Clear();
             treeView1.Nodes.Add(node);
@@ -158,6 +158,7 @@ namespace Manina.Windows.Forms
 
             showCheckboxesToolStripMenuItem.Checked = imageListView1.ShowCheckBoxes;
             showFileIconsToolStripMenuItem.Checked = imageListView1.ShowFileIcons;
+            showImageBordersToolStripMenuItem.Checked = imageListView1.ShowImageBorders;
 
             x96ToolStripMenuItem.Checked = imageListView1.ThumbnailSize == new Size(96, 96);
             x120ToolStripMenuItem.Checked = imageListView1.ThumbnailSize == new Size(120, 120);
@@ -306,6 +307,12 @@ namespace Manina.Windows.Forms
         private void showFileIconsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             imageListView1.ShowFileIcons = !imageListView1.ShowFileIcons;
+        }
+
+        private void showImageBordersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            imageListView1.ShowImageBorders = !imageListView1.ShowImageBorders;
+            
         }
 
         private void allowCheckBoxClickToolStripMenuItem_Click(object sender, EventArgs e)
@@ -715,6 +722,9 @@ namespace Manina.Windows.Forms
             message = "";
             messageTimer.Enabled = false;
         }
+
         #endregion
+
+
     }
 }

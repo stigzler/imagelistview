@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2005
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageListView", "ImageListView\ImageListView.csproj", "{0C295FB8-C6C6-4A40-9F19-05A43F353A04}"
 EndProject
@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		update documentation.ps1 = update documentation.ps1
 		update nuget package.ps1 = update nuget package.ps1
 	EndProjectSection
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MyDocumentation", "MyDocumentation\MyDocumentation.shproj", "{4632EB93-E05C-4AD6-B1FE-3FF6B706DA05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,6 +78,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0B7C912-647B-4D56-B721-6C27CE0C1D67}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MyDocumentation\MyDocumentation.projitems*{4632eb93-e05c-4ad6-b1fe-3ff6b706da05}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = ImageListViewTests\ImageListViewTests.csproj

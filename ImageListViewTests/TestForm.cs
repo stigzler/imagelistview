@@ -480,6 +480,7 @@ namespace ImageListViewTests
 
             ShowFileIcons.Checked = imageListView.ShowFileIcons;
             ShowCheckboxes.Checked = imageListView.ShowCheckBoxes;
+            
             ShowScrollbars.Checked = imageListView.ScrollBars;
             GroupByName.Checked = (imageListView.Columns[0].Grouper == null && imageListView.GroupOrder != Manina.Windows.Forms.SortOrder.None);
             GroupByCustom.Checked = (imageListView.Columns[0].Grouper != null);

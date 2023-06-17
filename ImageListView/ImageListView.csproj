@@ -73,27 +73,19 @@
     <Compile Include="GDIShellInfoExtractor.cs" />
     <Compile Include="GDIThumbnailExtractor.cs" />
     <Compile Include="IExtractor.cs" />
-    <Compile Include="IGrouper.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="IGrouper.cs" />
     <Compile Include="ImageListViewSubItem.cs" />
     <Compile Include="ImageListViewSubItemCollection.cs" />
     <Compile Include="Metadata.cs" />
     <Compile Include="PersistentCache.cs" />
-    <Compile Include="ImageListViewGroupCollection.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ImageListViewGroup.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ImageListViewGroupCollection.cs" />
+    <Compile Include="ImageListViewGroup.cs" />
     <Compile Include="ImageListViewItemAdaptors.cs">
     </Compile>
     <Compile Include="ImageListViewCacheMetadata.cs" />
     <Compile Include="ImageListViewCacheShellInfo.cs" />
     <Compile Include="ImageListViewCacheThumbnail.cs" />
-    <Compile Include="ImageListViewItemAdaptor.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ImageListViewItemAdaptor.cs" />
     <Compile Include="QueuedBackgroundWorkerEvents.cs">
     </Compile>
     <Compile Include="ImageListViewItemTypeConverter.cs" />
@@ -103,9 +95,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ImageListViewColorTypeConverter.cs" />
-    <Compile Include="ImageListViewCheckedItemCollection.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ImageListViewCheckedItemCollection.cs" />
     <Compile Include="ImageListViewColor.cs" />
     <Compile Include="ImageListViewResources.de.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -120,33 +110,19 @@
     <Compile Include="ImageListViewRenderers.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Events.cs" />
-    <Compile Include="HitInfo.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="HitInfo.cs" />
     <Compile Include="ImageListView.cs" />
-    <Compile Include="ImageListViewColumnHeader.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ImageListViewColumnHeaderCollection.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ImageListViewColumnHeader.cs" />
+    <Compile Include="ImageListViewColumnHeaderCollection.cs" />
     <Compile Include="ImageListViewDesigner.cs">
     </Compile>
     <Compile Include="ImageListViewItem.cs" />
-    <Compile Include="ImageListViewItemCollection.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ImageListViewItemCollection.cs" />
     <Compile Include="ImageListViewLayoutManager.cs">
     </Compile>
-    <Compile Include="ImageListViewRenderer.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ImageListViewSelectedItemCollection.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ImageListViewNavigationManager.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="ImageListViewRenderer.cs" />
+    <Compile Include="ImageListViewSelectedItemCollection.cs" />
+    <Compile Include="ImageListViewNavigationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ImageListViewResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -180,6 +156,7 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="OverallClassDiagram.cd" />
     <None Include="Resources\DefaultImage.png" />
   </ItemGroup>
   <ItemGroup>

@@ -68,9 +68,9 @@ namespace Manina.Windows.Forms
         // Adaptor
         internal object mVirtualItemKey;
         internal ImageListView.ImageListViewItemAdaptor mAdaptor;
+        // Used for cloned items
         // Used for custom columns
         private ImageListViewSubItemCollection mSubItems;
-        // Used for cloned items
         internal Image clonedThumbnail;
         // Group info
         internal string group;

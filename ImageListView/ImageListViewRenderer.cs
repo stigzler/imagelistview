@@ -25,6 +25,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace Manina.Windows.Forms
 {
+    [System.ComponentModel.DesignerCategory("Code")]
     public partial class ImageListView
     {
         /// <summary>
@@ -725,7 +726,6 @@ namespace Manina.Windows.Forms
                 {
                     if (!RecreateBuffer(graphics)) return;
                 }
-
                 // Save the timne of this render for lazy refreshes
                 lastRenderTime = DateTime.Now;
 
@@ -1090,10 +1090,10 @@ namespace Manina.Windows.Forms
                     {
                         Rectangle pos = Utility.GetSizedImageBounds(img, new Rectangle(bounds.Location + itemPadding, ImageListView.ThumbnailSize));
                         g.DrawImage(img, pos);
-                        // Draw image border
-                        if (Math.Min(pos.Width, pos.Height) > 32)
+                        // Draw image border - note: draws around the perimeter of the actual image - not the ILV selection item.
+                        if ((ImageListView.ShowImageBorders) && (Math.Min(pos.Width, pos.Height) > 32))
                         {
-                            using (Pen pOuterBorder = new Pen(ImageListView.Colors.ImageOuterBorderColor))
+                            using (Pen pOuterBorder = new Pen(ImageListView.Colors.ImageOuterBorderColor)) 
                             {
                                 g.DrawRectangle(pOuterBorder, pos);
                             }

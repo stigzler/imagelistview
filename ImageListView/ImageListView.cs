@@ -81,6 +81,7 @@ namespace Manina.Windows.Forms
         private SortOrder mSortOrder;
         private SortOrder mGroupOrder;
         private bool mShowFileIcons;
+        private bool mShowImageBorders;
         private bool mShowCheckBoxes;
         private ContentAlignment mIconAlignment;
         private Size mIconPadding;
@@ -629,6 +630,20 @@ namespace Manina.Windows.Forms
                 Refresh();
             }
         }
+
+        public bool ShowImageBorders
+        {
+            get { return mShowImageBorders; }
+            set
+            {
+                mShowImageBorders = value;
+                Refresh();
+            }
+        }
+
+
+
+
         /// <summary>
         /// Gets or sets whether to display the item checkboxes.
         /// </summary>

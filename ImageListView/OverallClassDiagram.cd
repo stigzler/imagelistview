@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Manina.Windows.Forms.ImageListView">
+    <Position X="3.25" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="Manina.Windows.Forms.ImageListView.GroupInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>IGrouper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Class Name="Manina.Windows.Forms.ImageListView.ImageListViewColumnHeaderCollection" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageListViewColumnHeaderCollection.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Manina.Windows.Forms.ImageListView.HitInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>HitInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Manina.Windows.Forms.ImageListView.ImageListViewRenderer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageListViewRenderer.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Manina.Windows.Forms.ImageListView.ImageListViewSelectedItemCollection" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageListViewSelectedItemCollection.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageListViewColumnHeader.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Manina.Windows.Forms.ImageListView.ImageListViewCheckedItemCollection" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageListViewCheckedItemCollection.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Manina.Windows.Forms.ImageListView.ImageListViewGroup" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageListViewGroup.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Manina.Windows.Forms.ImageListView.ImageListViewItemAdaptor" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageListViewItemAdaptor.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Manina.Windows.Forms.ImageListView.ImageListViewNavigationManager" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageListViewNavigationManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Interface Name="Manina.Windows.Forms.ImageListView.IGrouper" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>IGrouper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Interface>
+      <Class Name="Manina.Windows.Forms.ImageListView.ImageListViewGroupCollection" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageListViewGroupCollection.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Manina.Windows.Forms.ImageListView.ImageListViewItemCollection" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ImageListViewItemCollection.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>d9bjrlRqhK7Lj63BTmm2Z/t/QndVQRBMcf/SyUlr9yY=</HashCode>
+      <FileName>HitInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Lucida Sans" Size="10" />
+</ClassDiagram>
