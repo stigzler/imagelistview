@@ -281,6 +281,30 @@ namespace Manina.Windows.Forms
 
             return bounds;
         }
+        public Rectangle GetOverlayImageBounds(int itemIndex, Size imageSize)
+        {
+            Rectangle bounds = GetWidgetBounds(GetItemBounds(itemIndex), imageSize,
+                mImageListView.OverlayImagePadding, mImageListView.OverlayImageAlignment);
+
+            // If the checkbox and the icon have the same alignment,
+            // or in details view move the icon horizontally away from the checkbox
+            if (mImageListView.View == View.Details && mImageListView.ShowCheckBoxes && mImageListView.ShowFileIcons)
+                bounds.X += 16 + 2;
+            else if (mImageListView.CheckBoxAlignment == mImageListView.IconAlignment &&
+                mImageListView.ShowCheckBoxes && mImageListView.ShowFileIcons)
+            {
+                ContentAlignment alignment = mImageListView.OverlayImageAlignment;
+                if (alignment == ContentAlignment.BottomLeft || alignment == ContentAlignment.MiddleLeft || alignment == ContentAlignment.TopLeft)
+                    bounds.X += 16 + mImageListView.IconPadding.Width;
+                else if (alignment == ContentAlignment.BottomCenter || alignment == ContentAlignment.MiddleCenter || alignment == ContentAlignment.TopCenter)
+                    bounds.X += 8 + mImageListView.IconPadding.Width / 2;
+            }
+            return bounds;
+        }
+
+
+
+
         /// <summary>
         /// Returns the bounds of a widget.
         /// Used to calculate the bounds of checkboxes and icons.

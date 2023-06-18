@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Manina.Windows.Forms.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="StartupPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:/</Value>
+    <Setting Name="OverlayImageSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">16, 16</Value>
     </Setting>
   </Settings>
 </SettingsFile>

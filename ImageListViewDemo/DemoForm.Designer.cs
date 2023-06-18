@@ -74,9 +74,11 @@
             this.showCheckboxesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showFileIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showImageBordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showOverlayImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.checkboxAlignmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iconAlignmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.overlayImageAlignmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.continuousCacheModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
@@ -94,6 +96,7 @@
             this.sortDescendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofBrowseImage = new System.Windows.Forms.OpenFileDialog();
             this.messageTimer = new System.Windows.Forms.Timer(this.components);
+            this.showTextBackgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -228,9 +231,10 @@
             this.imageListView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageListView1.Location = new System.Drawing.Point(0, 0);
             this.imageListView1.Name = "imageListView1";
+            this.imageListView1.OverlayImagePadding = new System.Drawing.Size(0, 0);
+            this.imageListView1.OverlayImageSize = new System.Drawing.Size(0, 0);
             this.imageListView1.PersistentCacheDirectory = "";
             this.imageListView1.PersistentCacheSize = ((long)(100));
-            this.imageListView1.ShowImageBorders = false;
             this.imageListView1.Size = new System.Drawing.Size(557, 706);
             this.imageListView1.TabIndex = 0;
             this.imageListView1.UseWIC = false;
@@ -431,9 +435,12 @@
             this.showCheckboxesToolStripMenuItem,
             this.showFileIconsToolStripMenuItem,
             this.showImageBordersToolStripMenuItem,
+            this.showOverlayImageToolStripMenuItem,
+            this.showTextBackgroundToolStripMenuItem,
             this.toolStripMenuItem1,
             this.checkboxAlignmentToolStripMenuItem,
             this.iconAlignmentToolStripMenuItem,
+            this.overlayImageAlignmentToolStripMenuItem,
             this.toolStripMenuItem3,
             this.continuousCacheModeToolStripMenuItem,
             this.toolStripMenuItem7,
@@ -547,6 +554,13 @@
             this.showImageBordersToolStripMenuItem.Text = "Show Image Borders";
             this.showImageBordersToolStripMenuItem.Click += new System.EventHandler(this.showImageBordersToolStripMenuItem_Click);
             // 
+            // showOverlayImageToolStripMenuItem
+            // 
+            this.showOverlayImageToolStripMenuItem.Name = "showOverlayImageToolStripMenuItem";
+            this.showOverlayImageToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.showOverlayImageToolStripMenuItem.Text = "Show Overlay Image";
+            this.showOverlayImageToolStripMenuItem.Click += new System.EventHandler(this.showOverlayImageToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -563,6 +577,12 @@
             this.iconAlignmentToolStripMenuItem.Name = "iconAlignmentToolStripMenuItem";
             this.iconAlignmentToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.iconAlignmentToolStripMenuItem.Text = "Icon Alignment";
+            // 
+            // overlayImageAlignmentToolStripMenuItem
+            // 
+            this.overlayImageAlignmentToolStripMenuItem.Name = "overlayImageAlignmentToolStripMenuItem";
+            this.overlayImageAlignmentToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.overlayImageAlignmentToolStripMenuItem.Text = "Overlay Image Alignment";
             // 
             // toolStripMenuItem3
             // 
@@ -599,6 +619,7 @@
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // columnContextMenu
             // 
@@ -677,6 +698,13 @@
             this.messageTimer.Interval = 3000;
             this.messageTimer.Tick += new System.EventHandler(this.messageTimer_Tick);
             // 
+            // showTextBackgroundToolStripMenuItem
+            // 
+            this.showTextBackgroundToolStripMenuItem.Name = "showTextBackgroundToolStripMenuItem";
+            this.showTextBackgroundToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.showTextBackgroundToolStripMenuItem.Text = "Show Text Background";
+            this.showTextBackgroundToolStripMenuItem.Click += new System.EventHandler(this.showTextBackgroundToolStripMenuItem_Click);
+            // 
             // DemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -685,6 +713,7 @@
             this.Controls.Add(this.toolStripContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DemoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImageListView Demo";
             this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
@@ -774,6 +803,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showImageBordersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showOverlayImageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem overlayImageAlignmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showTextBackgroundToolStripMenuItem;
     }
 }
 

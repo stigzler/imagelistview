@@ -34,9 +34,14 @@ namespace Manina.Windows.Forms
             this.OkBT = new System.Windows.Forms.Button();
             this.CancelBT = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.StartupFolderTB = new System.Windows.Forms.TextBox();
-            this.StartupFolderBT = new System.Windows.Forms.Button();
+            this.OverlayImageWNUM = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.OverlayImageHNUM = new System.Windows.Forms.NumericUpDown();
+            this.OverlayImgSizePN = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayImageWNUM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayImageHNUM)).BeginInit();
+            this.OverlayImgSizePN.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -77,47 +82,69 @@ namespace Manina.Windows.Forms
             this.CancelBT.TabIndex = 1;
             this.CancelBT.Text = "Cancel";
             this.CancelBT.UseVisualStyleBackColor = true;
+            this.CancelBT.Click += new System.EventHandler(this.CancelBT_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 26);
+            this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.Size = new System.Drawing.Size(191, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Startup Folder:";
+            this.label1.Text = "Overlay Image Dimentions (WxH in px):";
             // 
-            // StartupFolderTB
+            // OverlayImageWNUM
             // 
-            this.StartupFolderTB.Location = new System.Drawing.Point(108, 23);
-            this.StartupFolderTB.Name = "StartupFolderTB";
-            this.StartupFolderTB.ReadOnly = true;
-            this.StartupFolderTB.Size = new System.Drawing.Size(276, 20);
-            this.StartupFolderTB.TabIndex = 3;
+            this.OverlayImageWNUM.Location = new System.Drawing.Point(200, 6);
+            this.OverlayImageWNUM.Name = "OverlayImageWNUM";
+            this.OverlayImageWNUM.Size = new System.Drawing.Size(60, 20);
+            this.OverlayImageWNUM.TabIndex = 3;
             // 
-            // StartupFolderBT
+            // label2
             // 
-            this.StartupFolderBT.Image = global::Manina.Windows.Forms.Properties.Resources.folder;
-            this.StartupFolderBT.Location = new System.Drawing.Point(390, 21);
-            this.StartupFolderBT.Name = "StartupFolderBT";
-            this.StartupFolderBT.Size = new System.Drawing.Size(36, 23);
-            this.StartupFolderBT.TabIndex = 4;
-            this.StartupFolderBT.UseVisualStyleBackColor = true;
-            this.StartupFolderBT.Click += new System.EventHandler(this.StartupFolderBT_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(266, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "X";
+            // 
+            // OverlayImageHNUM
+            // 
+            this.OverlayImageHNUM.Location = new System.Drawing.Point(286, 6);
+            this.OverlayImageHNUM.Name = "OverlayImageHNUM";
+            this.OverlayImageHNUM.Size = new System.Drawing.Size(60, 20);
+            this.OverlayImageHNUM.TabIndex = 5;
+            // 
+            // OverlayImgSizePN
+            // 
+            this.OverlayImgSizePN.AutoSize = true;
+            this.OverlayImgSizePN.Controls.Add(this.label1);
+            this.OverlayImgSizePN.Controls.Add(this.OverlayImageHNUM);
+            this.OverlayImgSizePN.Controls.Add(this.OverlayImageWNUM);
+            this.OverlayImgSizePN.Controls.Add(this.label2);
+            this.OverlayImgSizePN.Location = new System.Drawing.Point(87, 106);
+            this.OverlayImgSizePN.Name = "OverlayImgSizePN";
+            this.OverlayImgSizePN.Size = new System.Drawing.Size(352, 33);
+            this.OverlayImgSizePN.TabIndex = 6;
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.StartupFolderBT);
-            this.Controls.Add(this.StartupFolderTB);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.OverlayImgSizePN);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "Settings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayImageWNUM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayImageHNUM)).EndInit();
+            this.OverlayImgSizePN.ResumeLayout(false);
+            this.OverlayImgSizePN.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,7 +157,9 @@ namespace Manina.Windows.Forms
         private System.Windows.Forms.Button OkBT;
         private System.Windows.Forms.Button CancelBT;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox StartupFolderTB;
-        private System.Windows.Forms.Button StartupFolderBT;
+        private System.Windows.Forms.NumericUpDown OverlayImageWNUM;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown OverlayImageHNUM;
+        private System.Windows.Forms.Panel OverlayImgSizePN;
     }
 }

@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Resources;
 using System.Windows.Forms;
 
@@ -83,10 +84,16 @@ namespace Manina.Windows.Forms
         private bool mShowFileIcons;
         private bool mShowImageBorders;
         private bool mShowCheckBoxes;
+        private bool mShowOverlayImage;
+        private bool mShowTextBackground;
+        private Color mTextBackgroundColor;
         private ContentAlignment mIconAlignment;
         private Size mIconPadding;
         private ContentAlignment mCheckBoxAlignment;
         private Size mCheckBoxPadding;
+        private ContentAlignment mOverlayImageAlignment;
+        private Size mOverlayImagePadding;
+        private Size mOverlayImageSize = new Size(16, 16);
         private Size mThumbnailSize;
         private UseEmbeddedThumbnails mUseEmbeddedThumbnails;
         private View mView;
@@ -630,7 +637,7 @@ namespace Manina.Windows.Forms
                 Refresh();
             }
         }
-
+        [Category("Appearance"), Description("Gets or sets whether to display borders around the image."), DefaultValue(false)]
         public bool ShowImageBorders
         {
             get { return mShowImageBorders; }
@@ -641,8 +648,16 @@ namespace Manina.Windows.Forms
             }
         }
 
-
-
+        [Category("Appearance"), Description("Gets or sets whether to display the Overlay Image."), DefaultValue(false)]
+        public bool ShowOverlayImage
+        {
+            get { return mShowOverlayImage; }
+            set
+            {
+                mShowOverlayImage = value;
+                Refresh();
+            }
+        }
 
         /// <summary>
         /// Gets or sets whether to display the item checkboxes.
@@ -709,6 +724,65 @@ namespace Manina.Windows.Forms
                 Refresh();
             }
         }
+
+        [Category("Appearance"), Description("Gets or sets alignment of the Overlay Image."), DefaultValue(ContentAlignment.BottomRight)]
+
+        public ContentAlignment OverlayImageAlignment
+        {
+            get { return mOverlayImageAlignment; }
+            set
+            {
+                mOverlayImageAlignment = value;
+                Refresh();
+            }
+        }
+
+        [Category("Appearance"), Description("Gets or sets item Overlay Image padding."), DefaultValue(typeof(Size), "2,2")]
+        public Size OverlayImagePadding
+        {
+            get { return mOverlayImagePadding; }
+            set { mOverlayImagePadding = value; }
+        }
+
+        [Category("Appearance"), DisplayName("Overlay Image Size"), Description("Gets or sets item Overlay Image size."), DefaultValue(typeof(Size), "16,16")]
+        public Size OverlayImageSize
+        {
+            get { return mOverlayImageSize; }
+            set
+            {
+                mOverlayImageSize = value;
+                Refresh();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets whether to display the text background.
+        /// </summary>
+        [Category("Appearance"), Description("Gets or sets whether to display the text background."), DefaultValue(false)]
+        public bool ShowTextBackground
+        {
+            get { return mShowTextBackground; }
+            set
+            {
+                mShowTextBackground = value;
+                Refresh();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets whether to display the text background.
+        /// </summary>
+        [Category("Appearance"), Description("Gets or sets the Text BAckgournd Color."), DefaultValue(false)]
+        public Color TextBackgroundColor
+        {
+            get { return mTextBackgroundColor; }
+            set
+            {
+                mTextBackgroundColor = value;
+                Refresh();
+            }
+        }
+
         /// <summary>
         /// Gets or sets the index of the sort column.
         /// </summary>
@@ -1031,9 +1105,12 @@ namespace Manina.Windows.Forms
             mShowCheckBoxes = false;
             mCheckBoxAlignment = ContentAlignment.BottomRight;
             mCheckBoxPadding = new Size(2, 2);
+            mOverlayImagePadding = new Size(2, 2);
             mShowFileIcons = false;
             mIconAlignment = ContentAlignment.TopRight;
             mIconPadding = new Size(2, 2);
+            mShowTextBackground = true;
+            mTextBackgroundColor = Color.FromArgb(200, 0, 0, 0);
             Text = string.Empty;
             mThumbnailSize = new Size(96, 96);
             mUseEmbeddedThumbnails = UseEmbeddedThumbnails.Auto;

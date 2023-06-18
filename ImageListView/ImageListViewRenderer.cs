@@ -20,8 +20,11 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.Net.Mime.MediaTypeNames;
+using Image = System.Drawing.Image;
 
 namespace Manina.Windows.Forms
 {
@@ -628,6 +631,20 @@ namespace Manina.Windows.Forms
 
                         DrawFileIcon(g, param.Item, cBounds);
                     }
+                    if (ImageListView.ShowOverlayImage && ImageListView.View != View.Details) // Latter omits Overlay Image Draw in Details View
+                    {
+                        Size imageSize = param.Item.OvelayImage != null ? param.Item.OvelayImage.Size : Size.Empty;
+                        Rectangle cBounds = ImageListView.layoutManager.GetOverlayImageBounds(param.Item.Index, imageSize);
+                        if (Clip)
+                        {
+                            Rectangle clip = Rectangle.Intersect(cBounds, ImageListView.layoutManager.ItemAreaBounds);
+                            g.SetClip(clip);
+                        }
+                        else
+                            g.SetClip(ImageListView.layoutManager.ClientArea);
+
+                        DrawOverlayImage(g, param.Item, cBounds);
+                    }
                 }
             }
             /// <summary>
@@ -871,8 +888,11 @@ namespace Manina.Windows.Forms
             /// <param name="g">The System.Drawing.Graphics to draw on.</param>
             public virtual void InitializeGraphics(Graphics g)
             {
-                g.PixelOffsetMode = PixelOffsetMode.None;
-                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                g.InterpolationMode = InterpolationMode.HighQualityBilinear;
+                g.CompositingQuality = CompositingQuality.HighQuality;
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;           
             }
             /// <summary>
             /// Returns the height of group headers.
@@ -1122,6 +1142,12 @@ namespace Manina.Windows.Forms
                     }
                     Size szt = TextRenderer.MeasureText(item.Text, ImageListView.Font);
                     Rectangle rt = new Rectangle(bounds.Left + itemPadding.Width, bounds.Top + 2 * itemPadding.Height + ImageListView.ThumbnailSize.Height, ImageListView.ThumbnailSize.Width, szt.Height);
+                    if (ImageListView.ShowTextBackground)
+                    {
+                        g.FillRectangle(new SolidBrush(ImageListView.TextBackgroundColor), rt);
+                        foreColor = Color.WhiteSmoke;
+                    }
+                    
                     TextRenderer.DrawText(g, item.Text, ImageListView.Font, rt, foreColor,
                         TextFormatFlags.EndEllipsis | TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.SingleLine | TextFormatFlags.NoPrefix);
                 }
@@ -1341,6 +1367,24 @@ namespace Manina.Windows.Forms
                     g.DrawImage(icon, pt.X, pt.Y);
                 }
             }
+
+            public virtual void DrawOverlayImage(Graphics g, ImageListViewItem item, Rectangle bounds)
+            {
+                //Image icon = item.GetCachedImage(CachedImageType.SmallIcon);
+                if (item.OvelayImage != null)
+                {
+                    Size size = item.OvelayImage.Size;
+                    PointF ptf = new PointF(bounds.X + (bounds.Width - (float)size.Width) / 2.0f,
+                        bounds.Y + (bounds.Height - (float)size.Height) / 2.0f);
+                    Point pt = Point.Round(ptf);
+                    Rectangle rect = new Rectangle(pt.X, pt.Y, item.OvelayImage.Width, item.OvelayImage.Height);
+
+                    //g.DrawRectangle(new Pen(new SolidBrush(Color.Red), 2),);
+                    g.DrawImage(item.OvelayImage, rect);
+                }
+            }
+
+
             /// <summary>
             /// Draws the group headers.
             /// </summary>

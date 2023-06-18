@@ -100,13 +100,20 @@ namespace Manina.Windows.Forms
                 ToolStripMenuItem item2 = new ToolStripMenuItem(o.ToString());
                 item2.Tag = o;
                 item2.Click += new EventHandler(iconAlignmentToolStripButton_Click);
-                iconAlignmentToolStripMenuItem.DropDownItems.Add(item2);
+                iconAlignmentToolStripMenuItem.DropDownItems.Add(item2);  
+                ToolStripMenuItem item3 = new ToolStripMenuItem(o.ToString());
+                item3.Tag = o;
+                item3.Click += new EventHandler(overlayImageToolStripButton_Click);
+                overlayImageAlignmentToolStripMenuItem.DropDownItems.Add(item3);
+
             }
 
             imageListView1.AllowDuplicateFileNames = true;
             imageListView1.SetRenderer(new ImageListViewRenderers.DefaultRenderer());
             imageListView1.SortColumn = 0;
             imageListView1.SortOrder = SortOrder.AscendingNatural;
+
+            imageListView1.OverlayImageSize = Properties.Settings.Default.OverlayImageSize;
 
             string cacheDir = Path.Combine(
                 Path.GetDirectoryName(new Uri(assembly.GetName().CodeBase).LocalPath),
@@ -159,6 +166,7 @@ namespace Manina.Windows.Forms
             showCheckboxesToolStripMenuItem.Checked = imageListView1.ShowCheckBoxes;
             showFileIconsToolStripMenuItem.Checked = imageListView1.ShowFileIcons;
             showImageBordersToolStripMenuItem.Checked = imageListView1.ShowImageBorders;
+            showOverlayImageToolStripMenuItem.Checked = imageListView1.ShowOverlayImage;
 
             x96ToolStripMenuItem.Checked = imageListView1.ThumbnailSize == new Size(96, 96);
             x120ToolStripMenuItem.Checked = imageListView1.ThumbnailSize == new Size(120, 120);
@@ -183,6 +191,9 @@ namespace Manina.Windows.Forms
             ContentAlignment ia = imageListView1.IconAlignment;
             foreach (ToolStripMenuItem item in iconAlignmentToolStripMenuItem.DropDownItems)
                 item.Checked = (ContentAlignment)item.Tag == ia;
+            ContentAlignment oa = imageListView1.OverlayImageAlignment;
+            foreach (ToolStripMenuItem item in overlayImageAlignmentToolStripMenuItem.DropDownItems)
+                item.Checked = (ContentAlignment)item.Tag == oa;
 
             if (string.IsNullOrEmpty(message))
             {
@@ -225,6 +236,14 @@ namespace Manina.Windows.Forms
             ToolStripMenuItem item = (ToolStripMenuItem)sender;
             ContentAlignment aligment = (ContentAlignment)item.Tag;
             imageListView1.IconAlignment = aligment;
+        }
+
+        private void overlayImageToolStripButton_Click(Object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            ContentAlignment aligment = (ContentAlignment)item.Tag;
+            imageListView1.OverlayImageAlignment = aligment;
+
         }
 
         private void renderertoolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -313,6 +332,16 @@ namespace Manina.Windows.Forms
         {
             imageListView1.ShowImageBorders = !imageListView1.ShowImageBorders;
             
+        }
+
+        private void showOverlayImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            imageListView1.ShowOverlayImage = !imageListView1.ShowOverlayImage;
+        }
+
+        private void showTextBackgroundToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            imageListView1.ShowTextBackground = !imageListView1.ShowTextBackground;
         }
 
         private void allowCheckBoxClickToolStripMenuItem_Click(object sender, EventArgs e)
@@ -723,7 +752,15 @@ namespace Manina.Windows.Forms
             messageTimer.Enabled = false;
         }
 
+
+
         #endregion
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings setts = new Settings();
+            setts.ShowDialog();
+        }
 
 
     }

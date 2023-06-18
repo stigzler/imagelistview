@@ -16,9 +16,22 @@ namespace Manina.Windows.Forms
             InitializeComponent();
         }
 
+        private void Settings_Load(object sender, EventArgs e)
+        {
+            LoadSettings();
+        }
+
         private void SaveSettings()
         {
-            Properties.Settings.Default.StartupPath = StartupFolderTB.Text;
+            Properties.Settings.Default.OverlayImageSize = new Size((int)OverlayImageWNUM.Value, (int)OverlayImageHNUM.Value);
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void LoadSettings()
+        {
+            OverlayImageHNUM.Value = Properties.Settings.Default.OverlayImageSize.Height;
+            OverlayImageWNUM.Value = Properties.Settings.Default.OverlayImageSize.Width;
         }
 
         private void StartupFolderBT_Click(object sender, EventArgs e)
@@ -27,13 +40,20 @@ namespace Manina.Windows.Forms
             DialogResult res = fbd.ShowDialog();
             if (res != DialogResult.OK) return;
 
-            StartupFolderTB.Text = fbd.SelectedPath;
 
         }
 
         private void OkBT_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Save();
+            SaveSettings();
+            Close();
         }
+
+        private void CancelBT_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
     }
 }
