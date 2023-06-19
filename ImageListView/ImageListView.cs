@@ -1103,11 +1103,12 @@ namespace Manina.Windows.Forms
             ShellIconFromFileContent = true;
             Size = new Size(120, 100);
             mShowCheckBoxes = false;
-            mCheckBoxAlignment = ContentAlignment.BottomRight;
+            mCheckBoxAlignment = ContentAlignment.TopLeft;
             mCheckBoxPadding = new Size(2, 2);
-            mOverlayImagePadding = new Size(2, 2);
+            mOverlayImagePadding = new Size(2,2);
+            mOverlayImageAlignment = ContentAlignment.TopRight;
             mShowFileIcons = false;
-            mIconAlignment = ContentAlignment.TopRight;
+            mIconAlignment = ContentAlignment.BottomRight;
             mIconPadding = new Size(2, 2);
             mShowTextBackground = true;
             mTextBackgroundColor = Color.FromArgb(200, 0, 0, 0);

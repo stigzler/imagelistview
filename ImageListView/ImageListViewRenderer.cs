@@ -1370,7 +1370,6 @@ namespace Manina.Windows.Forms
 
             public virtual void DrawOverlayImage(Graphics g, ImageListViewItem item, Rectangle bounds)
             {
-                //Image icon = item.GetCachedImage(CachedImageType.SmallIcon);
                 if (item.OvelayImage != null)
                 {
                     Size size = item.OvelayImage.Size;
@@ -1379,11 +1378,11 @@ namespace Manina.Windows.Forms
                     Point pt = Point.Round(ptf);
                     Rectangle rect = new Rectangle(pt.X, pt.Y, item.OvelayImage.Width, item.OvelayImage.Height);
 
-                    //g.DrawRectangle(new Pen(new SolidBrush(Color.Red), 2),);
-                    g.DrawImage(item.OvelayImage, rect);
+                    // BUG: bounds come in right on the edge of the item - not sure padding is working
+                    g.DrawImage(item.OvelayImage, rect); 
+
                 }
             }
-
 
             /// <summary>
             /// Draws the group headers.
