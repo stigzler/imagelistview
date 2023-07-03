@@ -17,3 +17,17 @@ ImageListView.OverlayImageAlignment - Where to display to image
 
 ImageListView.OverlayImagePadding - Padding around overlay image
 
+### Exposed ImageListViewItemCollection Constructor as a Public Method
+This allows users to inherit this class to leverage custom ImageListViewItem collections and add custom members.
+
+e.g:
+
+```cs
+internal class GameListViewItemCollection : ImageListView.ImageListViewItemCollection
+{
+    public GameListViewItemCollection(ImageListView owner) : base(owner)
+    {
+            
+    }
+}
+```

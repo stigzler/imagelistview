@@ -45,7 +45,7 @@ namespace Manina.Windows.Forms
             /// Initializes a new instance of the <see cref="ImageListViewItemCollection"/>  class.
             /// </summary>
             /// <param name="owner">The <see cref="ImageListView"/> owning this collection.</param>
-            internal ImageListViewItemCollection(ImageListView owner)
+            public ImageListViewItemCollection(ImageListView owner)
             {
                 mItems = new List<ImageListViewItem>();
                 lookUp = new Dictionary<Guid, ImageListViewItem>();
