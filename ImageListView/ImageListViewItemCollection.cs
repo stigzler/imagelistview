@@ -53,6 +53,17 @@ namespace Manina.Windows.Forms
                 mImageListView = owner;
                 collectionModified = true;
             }
+
+            public ImageListViewItemCollection()
+            {
+                mItems = new List<ImageListViewItem>();
+                lookUp = new Dictionary<Guid, ImageListViewItem>();
+                mFocused = null;
+               // mImageListView = owner;
+                collectionModified = true;
+            }
+
+
             #endregion
 
             #region Properties
@@ -92,7 +103,7 @@ namespace Manina.Windows.Forms
             /// Gets the <see cref="ImageListView"/> owning this collection.
             /// </summary>
             [Category("Behavior"), Browsable(false), Description("Gets the ImageListView owning this collection.")]
-            public ImageListView ImageListView { get { return mImageListView; } }
+            public ImageListView ImageListView { get { return mImageListView; } set { mImageListView = value; } }
             /// <summary>
             /// Gets or sets the <see cref="ImageListViewItem"/> at the specified index.
             /// </summary>
