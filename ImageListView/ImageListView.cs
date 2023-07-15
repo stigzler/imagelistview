@@ -125,13 +125,23 @@ namespace Manina.Windows.Forms
         internal ImageListViewCacheThumbnail thumbnailCache;
         internal ImageListViewCacheShellInfo shellInfoCache;
         internal ImageListViewCacheMetadata metadataCache;
-        internal ImageListViewItemAdaptors.FileSystemAdaptor defaultAdaptor;
+        public ImageListViewItemAdaptors.FileSystemAdaptor defaultAdaptor;
 
         // Resource manager
         private ResourceManager resources;
         #endregion
 
         #region Properties
+
+
+        public ImageListViewItemAdaptors.FileSystemAdaptor DefaultAdaptor { get => defaultAdaptor; set => defaultAdaptor = value; }
+
+
+
+
+
+
+
         /// <summary>
         /// Gets or sets whether thumbnail images are automatically rotated.
         /// </summary>
@@ -173,6 +183,10 @@ namespace Manina.Windows.Forms
         /// </summary>
         [Category("Behavior"), Description("Gets or sets whether the left-pane can be resized with the mouse."), DefaultValue(true)]
         public bool AllowPaneResize { get; set; }
+
+
+
+
         /// <summary>
         /// Gets or sets the background color of the control.
         /// </summary>
@@ -495,7 +509,7 @@ namespace Manina.Windows.Forms
         public ImageListViewItemCollection Items
         {
             get { return mItems; }
-            internal set
+            set
             {
                 mItems = value;
                 Refresh();

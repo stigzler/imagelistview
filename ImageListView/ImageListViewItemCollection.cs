@@ -59,7 +59,7 @@ namespace Manina.Windows.Forms
                 mItems = new List<ImageListViewItem>();
                 lookUp = new Dictionary<Guid, ImageListViewItem>();
                 mFocused = null;
-               // mImageListView = owner;
+                mImageListView = null;
                 collectionModified = true;
             }
 

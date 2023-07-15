@@ -31,3 +31,7 @@ internal class GameListViewItemCollection : ImageListView.ImageListViewItemColle
     }
 }
 ```
+
+### ImageListViewItemCollection made independent object
+
+Added new Constructor for ImageListViewItemCollection and also made ImageListView public Property, allowing instantiation of such a list without passing the ImageListView at instantiation, allowing binding to ImageListView at later time.

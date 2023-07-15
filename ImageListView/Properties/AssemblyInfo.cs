@@ -1,4 +1,4 @@
-﻿// ImageListView - A listview control for image files
+// ImageListView - A listview control for image files
 // Copyright (C) 2009 Ozgur Ozcitak
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,9 +24,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ImageListView")]
 [assembly: AssemblyDescription("A ListView like control for displaying image files with asynchronously loaded thumbnails.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Özgür Özçıtak")]
+[assembly: AssemblyCompany("?zg?r ?z??tak")]
 [assembly: AssemblyProduct("ImageListView")]
-[assembly: AssemblyCopyright("Copyright ©  2013 Özgür Özçıtak")]
+[assembly: AssemblyCopyright("Copyright ?  2013 ?zg?r ?z??tak")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -48,5 +48,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("13.8.2.0")]
-[assembly: AssemblyFileVersion("13.8.2.0")]
+[assembly: AssemblyVersion("13.8.2.4")]
+[assembly: AssemblyFileVersion("13.8.2.4")]

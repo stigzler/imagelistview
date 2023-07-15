@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MyDocumentation", "MyDocumentation\MyDocumentation.shproj", "{4632EB93-E05C-4AD6-B1FE-3FF6B706DA05}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BuildScripts", "BuildScripts\BuildScripts.shproj", "{269FDCFC-2780-4ECE-BAED-3A8015A814EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug without WPF|Any CPU = Debug without WPF|Any CPU
@@ -80,6 +82,7 @@ Global
 		SolutionGuid = {A0B7C912-647B-4D56-B721-6C27CE0C1D67}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		BuildScripts\BuildScripts.projitems*{269fdcfc-2780-4ece-baed-3a8015a814ec}*SharedItemsImports = 13
 		MyDocumentation\MyDocumentation.projitems*{4632eb93-e05c-4ad6-b1fe-3ff6b706da05}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
