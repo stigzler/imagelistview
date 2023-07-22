@@ -18,6 +18,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Design;
 using System.IO;
@@ -284,11 +285,16 @@ namespace Manina.Windows.Forms
                     isDirty = true;
                     if (mImageListView != null)
                     {
+
                         mImageListView.thumbnailCache.Remove(mGuid, true);
                         mImageListView.metadataCache.Remove(mGuid);
                         mImageListView.metadataCache.Add(mGuid, Adaptor, mFileName);
-                        if (mImageListView.IsItemVisible(mGuid))
+                        if (mImageListView.IsItemVisible(mGuid) && mImageListView.RefreshListViewOnFilenameSet == true)
+                        {
+                            Debug.WriteLine("Filename changed triggered Refresh");
                             mImageListView.Refresh();
+                        }
+
                     }
                 }
             }

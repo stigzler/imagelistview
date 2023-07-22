@@ -184,7 +184,11 @@ namespace Manina.Windows.Forms
         [Category("Behavior"), Description("Gets or sets whether the left-pane can be resized with the mouse."), DefaultValue(true)]
         public bool AllowPaneResize { get; set; }
 
+        [Category("Behavior"), Browsable(true), DisplayName("Refresh List on Item Add"), Description("Refreshes and redraws ImageList when an ImageListViewItem is added.")]
+        public bool RefreshListViewOnItemAdd { get; set; } = true;
 
+        [Category("Behavior"), Browsable(true), DisplayName("Refresh List on Filename change"), Description("Refreshes and redraws ImageList when the Filename property on an Item is changed.")]
+        public bool RefreshListViewOnFilenameSet { get; set; } = true;
 
 
         /// <summary>
@@ -1747,7 +1751,7 @@ namespace Manina.Windows.Forms
                 lazyRefreshTimer.Start();
             }
             else if (CanPaint())
-                base.Refresh();
+                base.Refresh(); // TODO: add a user property - e.g bool SupressRedrawOnItemAdd + make refresh conditional
             else
                 rendererNeedsPaint = true;
         }
