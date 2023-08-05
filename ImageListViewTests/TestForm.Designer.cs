@@ -738,7 +738,6 @@
             imageListViewColumnHeader9,
             imageListViewColumnHeader10});
             this.imageListView.ContextMenuStrip = this.ItemContextMenu;
-            this.imageListView.DefaultAdaptor = fileSystemAdaptor1;
             this.imageListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageListView.IconAlignment = System.Drawing.ContentAlignment.BottomRight;
             this.imageListView.Location = new System.Drawing.Point(0, 0);
@@ -746,7 +745,6 @@
             this.imageListView.OverlayImageAlignment = System.Drawing.ContentAlignment.TopRight;
             this.imageListView.PersistentCacheDirectory = "";
             this.imageListView.PersistentCacheSize = ((long)(100));
-            this.imageListView.RefreshListViewOnItemAdd = true;
             this.imageListView.ShowTextBackground = true;
             this.imageListView.Size = new System.Drawing.Size(412, 574);
             this.imageListView.TabIndex = 0;

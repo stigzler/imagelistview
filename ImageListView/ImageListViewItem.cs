@@ -289,11 +289,12 @@ namespace Manina.Windows.Forms
                         mImageListView.thumbnailCache.Remove(mGuid, true);
                         mImageListView.metadataCache.Remove(mGuid);
                         mImageListView.metadataCache.Add(mGuid, Adaptor, mFileName);
-                        if (mImageListView.IsItemVisible(mGuid) && mImageListView.RefreshListViewOnFilenameSet == true)
-                        {
-                            Debug.WriteLine("Filename changed triggered Refresh");
-                            mImageListView.Refresh();
-                        }
+                        mImageListView.Refresh();
+
+                        //if (mImageListView.IsItemVisible(mGuid) && mImageListView.RefreshListViewOnFilenameSet == true)
+                        //{
+                        //    Debug.WriteLine("Filename changed triggered Refresh");
+                        //}
 
                     }
                 }

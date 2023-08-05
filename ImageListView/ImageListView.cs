@@ -125,23 +125,13 @@ namespace Manina.Windows.Forms
         internal ImageListViewCacheThumbnail thumbnailCache;
         internal ImageListViewCacheShellInfo shellInfoCache;
         internal ImageListViewCacheMetadata metadataCache;
-        public ImageListViewItemAdaptors.FileSystemAdaptor defaultAdaptor;
+        internal ImageListViewItemAdaptors.FileSystemAdaptor defaultAdaptor;
 
         // Resource manager
         private ResourceManager resources;
         #endregion
 
         #region Properties
-
-
-        public ImageListViewItemAdaptors.FileSystemAdaptor DefaultAdaptor { get => defaultAdaptor; set => defaultAdaptor = value; }
-
-
-
-
-
-
-
         /// <summary>
         /// Gets or sets whether thumbnail images are automatically rotated.
         /// </summary>
@@ -183,14 +173,6 @@ namespace Manina.Windows.Forms
         /// </summary>
         [Category("Behavior"), Description("Gets or sets whether the left-pane can be resized with the mouse."), DefaultValue(true)]
         public bool AllowPaneResize { get; set; }
-
-        [Category("Behavior"), Browsable(true), DisplayName("Refresh List on Item Add"), Description("Refreshes and redraws ImageList when an ImageListViewItem is added.")]
-        public bool RefreshListViewOnItemAdd { get; set; } = true;
-
-        [Category("Behavior"), Browsable(true), DisplayName("Refresh List on Filename change"), Description("Refreshes and redraws ImageList when the Filename property on an Item is changed.")]
-        public bool RefreshListViewOnFilenameSet { get; set; } = true;
-
-
         /// <summary>
         /// Gets or sets the background color of the control.
         /// </summary>
@@ -513,7 +495,7 @@ namespace Manina.Windows.Forms
         public ImageListViewItemCollection Items
         {
             get { return mItems; }
-            set
+            internal set
             {
                 mItems = value;
                 Refresh();
@@ -1751,7 +1733,7 @@ namespace Manina.Windows.Forms
                 lazyRefreshTimer.Start();
             }
             else if (CanPaint())
-                base.Refresh(); // TODO: add a user property - e.g bool SupressRedrawOnItemAdd + make refresh conditional
+                base.Refresh();
             else
                 rendererNeedsPaint = true;
         }
