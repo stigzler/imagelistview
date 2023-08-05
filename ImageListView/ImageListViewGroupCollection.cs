@@ -39,6 +39,10 @@ namespace Manina.Windows.Forms
             #endregion
 
             #region Properties
+
+            public ImageListViewItemAdaptors.FileSystemAdaptor DefaultAdaptor { get => mImageListView.defaultAdaptor; set => mImageListView.defaultAdaptor = value; }
+
+
             /// <summary>
             /// Gets the number of groups in the collection.
             /// </summary>

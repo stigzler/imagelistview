@@ -59,7 +59,7 @@ namespace Manina.Windows.Forms
                 mItems = new List<ImageListViewItem>();
                 lookUp = new Dictionary<Guid, ImageListViewItem>();
                 mFocused = null;
-               // mImageListView = owner;
+                mImageListView = null;
                 collectionModified = true;
             }
 
@@ -99,6 +99,9 @@ namespace Manina.Windows.Forms
                         mImageListView.Refresh();
                 }
             }
+
+
+
             /// <summary>
             /// Gets the <see cref="ImageListView"/> owning this collection.
             /// </summary>
@@ -174,7 +177,7 @@ namespace Manina.Windows.Forms
                 {
                     if (item.Selected)
                         mImageListView.OnSelectionChangedInternal();
-                    mImageListView.Refresh();
+                   if (mImageListView.RefreshListViewOnItemAdd == true) mImageListView.Refresh();
                 }
             }
             /// <summary>
