@@ -133,7 +133,7 @@ namespace Manina.Windows.Forms
 
         #region Properties
 
-
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public ImageListViewItemAdaptors.FileSystemAdaptor DefaultAdaptor { get => defaultAdaptor; set => defaultAdaptor = value; }
 
 
@@ -185,9 +185,11 @@ namespace Manina.Windows.Forms
         public bool AllowPaneResize { get; set; }
 
         [Category("Behavior"), Browsable(true), DisplayName("Refresh List on Item Add"), Description("Refreshes and redraws ImageList when an ImageListViewItem is added.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool RefreshListViewOnItemAdd { get; set; } = true;
 
         [Category("Behavior"), Browsable(true), DisplayName("Refresh List on Filename change"), Description("Refreshes and redraws ImageList when the Filename property on an Item is changed.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool RefreshListViewOnFilenameSet { get; set; } = true;
 
 
@@ -294,6 +296,7 @@ namespace Manina.Windows.Forms
         /// Gets or sets the path to the persistent cache file.
         /// </summary>
         [Category("Behavior"), Description("Gets or sets the path to the persistent cache file."), Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string PersistentCacheDirectory
         {
             get
@@ -309,6 +312,7 @@ namespace Manina.Windows.Forms
         /// Gets or sets the size of the persistent cache file in MB.
         /// </summary>
         [Category("Behavior"), Description("Gets or sets the size of the persistent cache file in MB."), Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public long PersistentCacheSize
         {
             get
@@ -932,6 +936,7 @@ namespace Manina.Windows.Forms
         /// <summary>
         /// Gets or sets the scroll offset.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         internal Point ViewOffset
         {
             get { return mViewOffset; }
@@ -948,6 +953,7 @@ namespace Manina.Windows.Forms
         /// Gets or sets whether the control uses WPF/WIC for thumbnail extraction.
         /// </summary>
         [Category("Appearance"), Description("Gets or sets whether the control uses for thumbnail extraction.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool UseWIC { get { return Extractor.UseWIC; } set { Extractor.UseWIC = value; } }
 
         /// <summary>
